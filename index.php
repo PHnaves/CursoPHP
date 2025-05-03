@@ -1,6 +1,7 @@
 <?php
 
-include 'configuration.php';
+require_once 'sistema/config.php';
+include_once 'helpers.php';
 
 // Comentario utilizado para uma unica linha
 echo '<h1>Arquivo de Inicialização</h1>';
@@ -10,3 +11,9 @@ echo '<h1>Arquivo de Inicialização</h1>';
 * OBS: Ctrl + ; É Um Atalho para Comentarios de varias Linhas 
 */
 print '<h2>Será a Primeira Página a Ser Carregada</h2>';
+
+$texto = "texto para a funcao";
+
+echo saudacao();
+echo '<hr>';
+echo resumirTexto($texto, 50, "continue");
