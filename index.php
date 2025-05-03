@@ -17,3 +17,12 @@ $texto = "texto para a funcao";
 echo saudacao();
 echo '<hr>';
 echo resumirTexto($texto, 50, "continue");
+
+
+//Tipos de Dados
+$string = 'Textos ou caracteres especiais';
+$int = 70;
+$float = 34.56;
+$boolean = true or false;
+$null = null;
+ 
