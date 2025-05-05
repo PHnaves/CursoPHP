@@ -20,6 +20,14 @@ function saudacao(): string
     return $saudacao;
 }
 
+/*
+ * Resume Um Texto
+ *  
+ * @param string $texto Texto que será resumido
+ * @param int $limite Qunatidade de caracteres
+ * @param string $continue O que será exibido ao final do texto resumido
+ * @return string Texto resumido 
+ */
 function resumirTexto(string $texto, int $limite, string $continue = '...'): string
 {
     $textoLimpo = trim($texto);
