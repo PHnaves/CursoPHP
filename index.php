@@ -16,7 +16,7 @@ $texto = "texto para a funcao";
 
 echo saudacao();
 echo '<hr>';
-echo resumirTexto($texto, 50, "continue");
+echo resumirTexto($texto, 15);
 
 
 //Tipos de Dados

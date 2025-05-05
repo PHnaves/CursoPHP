@@ -3,7 +3,7 @@
 // Funcao sem parametro
 function saudacao(): string
 {
-    $horaAtual = 22;
+    $horaAtual = date('H:I:S');
 
     if ($horaAtual >= 0 and $horaAtual <= 5) {
         $saudacao = "Buenas Madrugas";
@@ -15,11 +15,27 @@ function saudacao(): string
         $saudacao = "Buenas Notchas";
     }
 
+    var_dump($horaAtual);
+
     return $saudacao;
 }
 
-//funcao com parametros
 function resumirTexto(string $texto, int $limite, string $continue = '...'): string
 {
-    return $texto;
+    $textoLimpo = trim($texto);
+
+    if (mb_strlen($textoLimpo) <= $limite) {
+        return $textoLimpo;
+    }
+
+    // Pega até o limite e evita cortar palavras no meio
+    $textoCortado = mb_substr($textoLimpo, 0, $limite);
+    $ultimoEspaco = mb_strrpos($textoCortado, ' ');
+
+    if ($ultimoEspaco !== false) {
+        $textoCortado = mb_substr($textoCortado, 0, $ultimoEspaco);
+    }
+
+    return $textoCortado . $continue;
 }
+
