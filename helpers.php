@@ -1,5 +1,11 @@
 <?php
 
+// Função com operador Ternario
+function formatarNumero(float $numero) : string
+{
+    return number_format(($numero ? $numero : 0), 2, ',', '.');
+}
+
 // Funcao sem parametro
 function saudacao(): string
 {

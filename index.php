@@ -25,4 +25,9 @@ $int = 70;
 $float = 34.56;
 $boolean = true or false;
 $null = null;
- 
+
+//Operador Ternario
+$valorTeste = 1000;
+echo $valorTeste < 1000 ? "Ta duro" : "Ta rico";
+
+echo formatarNumero($valorTeste);
