@@ -43,4 +43,8 @@ echo validarEmail('testando@gmail.com');
 
 echo '<hr>';
 
-echo validarUrl('ss://github.com/PHnaves/CursoPHP');
+$url = 'https://github.com/PHnaves/CursoPHP';
+
+echo validarUrlComFiltro($url);
+echo '<hr>';
+var_dump(validarUrl($url));

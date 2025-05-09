@@ -105,7 +105,7 @@ function validarEmail(string $email): string
         return "Endereço de email valido";
     } else {
         return "Endereço de email invalido";
-    } 
+    }
 }
 
 /**
@@ -113,7 +113,7 @@ function validarEmail(string $email): string
  * @param string url
  * @return string
  */
-function validarUrl(string $url): string
+function validarUrlComFiltro(string $url): string
 {
 
     $url = filter_var($url, FILTER_VALIDATE_URL);
@@ -123,4 +123,18 @@ function validarUrl(string $url): string
     } else {
         return "Url invalida";
     }
+}
+
+function validarUrl(string $url): bool 
+{
+    if(mb_strlen($url) < 10){
+        return false;
+    }
+    if(!str_contains($url, '.')){
+        return false;
+    }
+    if(str_contains($url, 'http://') or str_contains($url, 'https://')){
+        return true;
+    }
+    return false;
 }
