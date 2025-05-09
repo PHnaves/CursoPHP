@@ -35,3 +35,12 @@ echo '<hr>';
 
 //contar tempo
 echo contarTempo('2025-05-09 14:31:12');
+
+echo '<hr>';
+
+//validações
+echo validarEmail('testando@gmail.com');
+
+echo '<hr>';
+
+echo validarUrl('ss://github.com/PHnaves/CursoPHP');

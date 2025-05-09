@@ -89,3 +89,38 @@ function contarTempo(string $data): string
         return $anos == 1 ? "há 1 ano" : "há $anos anos";
     }
 }
+
+
+/**
+ * Valida um endereço de email
+ * @param string $email
+ * @return string 
+ */
+function validarEmail(string $email): string
+{
+
+    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+    if ($email) {
+        return "Endereço de email valido";
+    } else {
+        return "Endereço de email invalido";
+    } 
+}
+
+/**
+ * Valida uma url
+ * @param string url
+ * @return string
+ */
+function validarUrl(string $url): string
+{
+
+    $url = filter_var($url, FILTER_VALIDATE_URL);
+
+    if ($url) {
+        return "Url valida";
+    } else {
+        return "Url invalida";
+    }
+}
