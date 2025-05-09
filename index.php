@@ -31,3 +31,7 @@ $valorTeste = 1000;
 echo $valorTeste < 1000 ? "Ta duro" : "Ta rico";
 
 echo formatarNumero($valorTeste);
+echo '<hr>';
+
+//contar tempo
+echo contarTempo('2025-05-09 14:31:12');
