@@ -48,3 +48,10 @@ $url = 'https://github.com/PHnaves/CursoPHP';
 echo validarUrlComFiltro($url);
 echo '<hr>';
 var_dump(validarUrl($url));
+
+echo '<hr>';
+
+//constantes
+echo SITE_NOME;
+echo '<hr>';
+echo constant('SITE_NOME');
