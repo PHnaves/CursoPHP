@@ -125,16 +125,38 @@ function validarUrlComFiltro(string $url): string
     }
 }
 
-function validarUrl(string $url): bool 
+function validarUrl(string $url): bool
 {
-    if(mb_strlen($url) < 10){
+    if (mb_strlen($url) < 10) {
         return false;
     }
-    if(!str_contains($url, '.')){
+    if (!str_contains($url, '.')) {
         return false;
     }
-    if(str_contains($url, 'http://') or str_contains($url, 'https://')){
+    if (str_contains($url, 'http://') or str_contains($url, 'https://')) {
         return true;
     }
     return false;
+}
+
+
+function localhost(): bool
+{
+    return ($_SERVER['SERVER_NAME'] == 'localhost' ? true : false);
+}
+
+/**
+ * Analisa a url e retorna a de desenvolvimento ou de producao
+ * @param string $url
+ * @return string 
+ */
+function url(string $url) : string 
+{
+    $servidor = $_SERVER['SERVER_NAME'];
+    $ambiente = ($servidor == 'localhost' ? URL_DESENVOLVIMENTO : URL_PRODUCAO);
+    
+    if(str_starts_with($url, '/')){
+        return $ambiente.$url;
+    }
+    return $ambiente.'/'.$url;
 }

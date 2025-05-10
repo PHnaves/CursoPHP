@@ -55,3 +55,10 @@ echo '<hr>';
 echo SITE_NOME;
 echo '<hr>';
 echo constant('SITE_NOME');
+echo '<hr>';
+
+//informacoes do servidor
+//var_dump($_SERVER);
+var_dump(localhost());
+echo '<hr>';
+echo url('/admin');
