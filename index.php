@@ -62,3 +62,7 @@ echo '<hr>';
 var_dump(localhost());
 echo '<hr>';
 echo url('/admin');
+echo '<hr>';
+
+//introducao a arrays
+echo dataFormatada();

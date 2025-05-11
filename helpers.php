@@ -160,3 +160,36 @@ function url(string $url) : string
     }
     return $ambiente.'/'.$url;
 }
+
+/**
+ * Formatar data atual
+ * @return string
+ */
+function dataFormatada() : string
+{
+    $diaMes = date('d');
+    $diaSemana = date('w');
+    $mes = date('n') - 1;
+    $ano = date('Y');
+
+    $nomeDiasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sabado'];
+
+    $nomeMeses = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro'
+    ];
+
+    $dataFormatada = $nomeDiasSemana[$diaSemana].', '. $diaMes . ' de '. $nomeMeses[$mes]. ' de '. $ano;
+
+    return $dataFormatada;
+} 
