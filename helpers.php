@@ -13,18 +13,23 @@ function saudacao(): string
 {
     $horaAtual = date('H:i:s');
 
-    if ($horaAtual >= 0 && $horaAtual < 6) {
-        $saudacao = "Buenas Madrugadas";
-    } elseif ($horaAtual >= 6 && $horaAtual <= 12) {
-        $saudacao = "Buenos Días";
-    } elseif ($horaAtual > 12 && $horaAtual <= 18) {
-        $saudacao = "Buenas Tardes";
-    } else {
-        $saudacao = "Buenas Noches";
+    switch ($horaAtual) {
+        case $horaAtual >= 0 and $horaAtual < 6:
+            $saudacao = "Buenas Madrugadas";
+            break;
+
+        case $horaAtual >= 6 && $horaAtual <= 12:
+            $saudacao = "Buenos Dias";
+            break;
+
+        case $horaAtual > 12 && $horaAtual <= 18:
+            $saudacao = "Buenos Dias";
+            break;
+
+        default:
+            $saudacao = "Buenas Noches";
+            break;
     }
-
-    var_dump($horaAtual);
-
     return $saudacao;
 }
 
@@ -150,22 +155,22 @@ function localhost(): bool
  * @param string $url
  * @return string 
  */
-function url(string $url) : string 
+function url(string $url): string
 {
     $servidor = $_SERVER['SERVER_NAME'];
     $ambiente = ($servidor == 'localhost' ? URL_DESENVOLVIMENTO : URL_PRODUCAO);
-    
-    if(str_starts_with($url, '/')){
-        return $ambiente.$url;
+
+    if (str_starts_with($url, '/')) {
+        return $ambiente . $url;
     }
-    return $ambiente.'/'.$url;
+    return $ambiente . '/' . $url;
 }
 
 /**
  * Formatar data atual
  * @return string
  */
-function dataFormatada() : string
+function dataFormatada(): string
 {
     $diaMes = date('d');
     $diaSemana = date('w');
@@ -189,7 +194,7 @@ function dataFormatada() : string
         'Dezembro'
     ];
 
-    $dataFormatada = $nomeDiasSemana[$diaSemana].', '. $diaMes . ' de '. $nomeMeses[$mes]. ' de '. $ano;
+    $dataFormatada = $nomeDiasSemana[$diaSemana] . ', ' . $diaMes . ' de ' . $nomeMeses[$mes] . ' de ' . $ano;
 
     return $dataFormatada;
-} 
+}
