@@ -66,3 +66,24 @@ echo '<hr>';
 
 //introducao a arrays
 echo dataFormatada();
+echo '<hr>';
+
+//laços de repetição
+$i = 0;
+while ($i < 10) {
+    echo ($i % 2 == 0) ? $i . ' é par' : $i . ' é impar';
+    echo '<br>';
+    $i++;
+}
+
+echo '<hr>';
+
+for ($numero1 = 0; $numero1 <= 10; $numero1++) {
+    for ($numero2 = 0; $numero2 <= 10; $numero2++) {
+        echo $numero1 . ' x ' . $numero2 . ' = ' . ($numero1 * $numero2) . '<br>';
+    }
+    echo '<hr>';
+}
+
+
+

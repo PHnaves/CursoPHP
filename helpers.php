@@ -13,23 +13,18 @@ function saudacao(): string
 {
     $horaAtual = date('H:i:s');
 
-    switch ($horaAtual) {
-        case $horaAtual >= 0 and $horaAtual < 6:
-            $saudacao = "Buenas Madrugadas";
-            break;
-
-        case $horaAtual >= 6 && $horaAtual <= 12:
-            $saudacao = "Buenos Dias";
-            break;
-
-        case $horaAtual > 12 && $horaAtual <= 18:
-            $saudacao = "Buenos Dias";
-            break;
-
-        default:
-            $saudacao = "Buenas Noches";
-            break;
+    if ($horaAtual >= 0 && $horaAtual < 6) {
+        $saudacao = "Buenas Madrugadas";
+    } elseif ($horaAtual >= 6 && $horaAtual <= 12) {
+        $saudacao = "Buenos Días";
+    } elseif ($horaAtual > 12 && $horaAtual <= 18) {
+        $saudacao = "Buenas Tardes";
+    } else {
+        $saudacao = "Buenas Noches";
     }
+
+    var_dump($horaAtual);
+
     return $saudacao;
 }
 
