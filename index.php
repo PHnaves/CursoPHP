@@ -1,5 +1,6 @@
 <?php
 
+include_once 'sistema/Nucleo/Message.php';
 require_once 'sistema/config.php';
 include_once 'helpers.php';
 
@@ -106,6 +107,11 @@ echo '<hr>';
 
 echo dividirString();
 echo '<hr>';
+
+//introducao a classes
+$message = new Message();
+$message->title =  'Teste de atributo publico';
+var_dump($message);
 
 
 
