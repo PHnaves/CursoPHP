@@ -205,3 +205,59 @@ function dataFormatada(): string
 
     return $dataFormatada;
 }
+
+//introdução a expressões regulares
+//preg_match()
+function verificarTexto(string $texto) : string
+{
+    //Verifica se o texto contém um e-mail
+    if (preg_match('/\b[\w.%+-]+@[\w.-]+\.[a-z]{2,}\b/i', $texto)) {
+        return "E-mail encontrado!";
+    } else {
+        return "Nenhum e-mail.";
+    }
+}
+
+//preg_match_all()
+function verificarEmails()
+{
+    $texto = "Contatos: ana@gmail.com, joao@yahoo.com e pedro@hotmail.com";
+    preg_match_all('/[\w.%+-]+@[\w.-]+\.[a-z]{2,}/i', $texto, $encontrados);
+
+    print_r($encontrados[0]);
+}
+
+//preg_replace()
+function limparCpf(string $cpf) : string
+{
+    return preg_replace('/[^0-9]/', '', $cpf);
+}
+
+function verificarEmail(string $email)
+{
+    return preg_replace('/\bpnaves001@gmail.com\b/', 'admin', $email);
+}
+
+function verificarMaldicaoHelloWorld(string $testeDev)
+{
+    return preg_replace('/^HELLO WORLD/i', 'Hello World Dev! Quebrou a maldição, agora sua missão de virar dev apenas começou', $testeDev);
+}
+
+//preg_grep()
+function filtrarArray()
+{
+    $nomes = ["Ana", "Pedro", "Lucas", "Paula", "Joana"];
+    $resultado = preg_grep('/^P/', $nomes);  // Começam com "P"
+
+    print_r($resultado);
+
+}
+
+//preg_split()
+function dividirString()
+{
+    $frase = "João, Maria; Ana - Pedro";
+    $nomes = preg_split('/[,\;\-\s]+/', $frase);  // separa por vírgula, ponto e vírgula, hífen ou espaço
+
+    print_r($nomes);
+}

@@ -85,5 +85,28 @@ for ($numero1 = 0; $numero1 <= 10; $numero1++) {
     echo '<hr>';
 }
 
+//expressoes regulares
+echo verificarTexto('oi tudo bem meu email é pnaves001@gmail.com');
+echo '<hr>';
+
+echo verificarEmails();
+echo '<hr>';
+
+echo limparCpf('123.456.789-00');
+echo '<hr>';
+
+echo verificarEmail('pnaves001@gmail.com');
+echo '<hr>';
+
+echo verificarMaldicaoHelloWorld('Hello World aaaaaaaaaaaaaaaaaaa!');
+echo '<hr>';
+
+echo filtrarArray();
+echo '<hr>';
+
+echo dividirString();
+echo '<hr>';
+
+
 
 
