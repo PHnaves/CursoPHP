@@ -112,7 +112,10 @@ echo '<hr>';
 $message = new Message();
 $message->title =  'Teste de atributo publico';
 var_dump($message);
+echo '<hr>';
 
+//metodos de classes
+echo $message->render();
 
 
 
