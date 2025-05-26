@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <?php
 
 include_once 'sistema/Nucleo/Message.php';
@@ -116,6 +118,14 @@ echo '<hr>';
 
 //metodos de classes
 echo $message->render();
+echo '<hr>';
+
+//encadeamento de metodos
+echo $message->success('mensagem de sucesso')->render();
+echo $message->warning('mensagem de perigo')->render();
+echo $message->error('mensagem de error')->render();
+
+
 
 
 
