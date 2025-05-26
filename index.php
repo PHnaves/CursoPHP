@@ -2,12 +2,14 @@
 
 <?php
 
-use sistema\Nucleo\Message;
+use sistema\Nucleo\Controller;
 use sistema\Nucleo\Helpers;
+use sistema\Nucleo\Message;
 
-include_once 'sistema/Nucleo/Message.php';
 require_once 'sistema/config.php';
+include_once 'sistema/Nucleo/Controller.php';
 include_once 'sistema/Nucleo/Helpers.php';
+include_once 'sistema/Nucleo/Message.php';
 
 // Comentario utilizado para uma unica linha
 echo '<h1>Arquivo de Inicialização</h1>';
@@ -131,7 +133,7 @@ echo $message->error('mensagem de error')->render();
 //metodos magicos
 echo (new Message());
 
-
-
+//construct
+$controler = new Controller('Pedro', 18);
 
 
