@@ -2,6 +2,8 @@
 
 <?php
 
+use sistema\Nucleo\Message;
+
 include_once 'sistema/Nucleo/Message.php';
 require_once 'sistema/config.php';
 include_once 'helpers.php';
