@@ -3,10 +3,11 @@
 <?php
 
 use sistema\Nucleo\Message;
+use sistema\Nucleo\Helpers;
 
 include_once 'sistema/Nucleo/Message.php';
 require_once 'sistema/config.php';
-include_once 'helpers.php';
+include_once 'sistema/Nucleo/Helpers.php';
 
 // Comentario utilizado para uma unica linha
 echo '<h1>Arquivo de Inicialização</h1>';
@@ -19,9 +20,9 @@ print '<h2>Será a Primeira Página a Ser Carregada</h2>';
 
 $texto = "texto para a funcao";
 
-echo saudacao();
+echo Helpers::saudacao();
 echo '<hr>';
-echo resumirTexto($texto, 15);
+echo Helpers::resumirTexto($texto, 15);
 
 
 //Tipos de Dados
@@ -35,24 +36,24 @@ $null = null;
 $valorTeste = 1000;
 echo $valorTeste < 1000 ? "Ta duro" : "Ta rico";
 
-echo formatarNumero($valorTeste);
+echo Helpers::formatarNumero($valorTeste);
 echo '<hr>';
 
 //contar tempo
-echo contarTempo('2025-05-09 14:31:12');
+echo Helpers::contarTempo('2025-05-09 14:31:12');
 
 echo '<hr>';
 
 //validações
-echo validarEmail('testando@gmail.com');
+echo Helpers::validarEmail('testando@gmail.com');
 
 echo '<hr>';
 
 $url = 'https://github.com/PHnaves/CursoPHP';
 
-echo validarUrlComFiltro($url);
+echo Helpers::validarUrlComFiltro($url);
 echo '<hr>';
-var_dump(validarUrl($url));
+var_dump(Helpers::validarUrl($url));
 
 echo '<hr>';
 
@@ -64,13 +65,13 @@ echo '<hr>';
 
 //informacoes do servidor
 //var_dump($_SERVER);
-var_dump(localhost());
+var_dump(Helpers::localhost());
 echo '<hr>';
-echo url('/admin');
+echo Helpers::url('/admin');
 echo '<hr>';
 
 //introducao a arrays
-echo dataFormatada();
+echo Helpers::dataFormatada();
 echo '<hr>';
 
 //laços de repetição
@@ -91,25 +92,25 @@ for ($numero1 = 0; $numero1 <= 10; $numero1++) {
 }
 
 //expressoes regulares
-echo verificarTexto('oi tudo bem meu email é pnaves001@gmail.com');
+echo Helpers::verificarTexto('oi tudo bem meu email é pnaves001@gmail.com');
 echo '<hr>';
 
-echo verificarEmails();
+echo Helpers::verificarEmails();
 echo '<hr>';
 
-echo limparCpf('123.456.789-00');
+echo Helpers::limparCpf('123.456.789-00');
 echo '<hr>';
 
-echo verificarEmail('pnaves001@gmail.com');
+echo Helpers::verificarEmail('pnaves001@gmail.com');
 echo '<hr>';
 
-echo verificarMaldicaoHelloWorld('Hello World aaaaaaaaaaaaaaaaaaa!');
+echo Helpers::verificarMaldicaoHelloWorld('Hello World aaaaaaaaaaaaaaaaaaa!');
 echo '<hr>';
 
-echo filtrarArray();
+echo Helpers::filtrarArray();
 echo '<hr>';
 
-echo dividirString();
+echo Helpers::dividirString();
 echo '<hr>';
 
 //introducao a classes
