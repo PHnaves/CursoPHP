@@ -2,9 +2,14 @@
 
 class Message
 {
-    public string $title;
-    private string $content;
+    public $title;
+    private $content;
     private $styleCss;
+
+    public function __toString()
+    {
+        return $this->render();
+    }
 
     public function success(string $message) : Message
     {

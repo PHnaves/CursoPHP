@@ -125,6 +125,9 @@ echo $message->success('mensagem de sucesso')->render();
 echo $message->warning('mensagem de perigo')->render();
 echo $message->error('mensagem de error')->render();
 
+//metodos magicos
+echo (new Message());
+
 
 
 
